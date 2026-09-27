@@ -102,12 +102,12 @@ a{color:inherit}
 .hero-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
   radial-gradient(ellipse 80% 70% at 62% 34%,transparent 50%,rgba(23,28,22,.4) 100%),
   linear-gradient(180deg,rgba(23,28,22,.35) 0%,transparent 18%)}
-.hero-cap{margin:0;position:absolute;right:clamp(20px,4vw,56px);bottom:clamp(120px,16vh,170px);z-index:2;font-style:italic;color:var(--night-muted);font-size:.9em;text-shadow:0 1px 12px rgba(23,28,22,.9)}
+.hero-cap{margin:0;position:absolute;right:clamp(20px,4vw,56px);bottom:clamp(120px,16vh,170px);z-index:2;font-style:italic;color:var(--bone);font-size:.9em;text-shadow:0 1px 3px rgba(23,28,22,.95),0 0 18px rgba(23,28,22,.9)}
 @keyframes heroIn{from{opacity:0;transform:scale(1.08);filter:blur(12px) saturate(.8) brightness(.8)}to{opacity:1;transform:scale(1);filter:saturate(.95) contrast(1.03) brightness(.97)}}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:180px;z-index:-1;background:linear-gradient(180deg,transparent,var(--night-2));pointer-events:none}
 .hero-copy{position:relative;max-width:720px;text-shadow:0 2px 28px rgba(23,28,22,.85)}
 .hero-copy>*{animation:rise 1.3s cubic-bezier(.2,.7,.2,1) both}
-.hero-copy>*:nth-child(1){animation-delay:.5s}.hero-copy>*:nth-child(2){animation-delay:.8s}.hero-copy>*:nth-child(3){animation-delay:1.05s}.hero-copy>*:nth-child(4){animation-delay:1.3s}
+.hero-copy>*:nth-child(1){animation-delay:.5s}.hero-copy>*:nth-child(2){animation-delay:.8s}.hero-copy>*:nth-child(3){animation-delay:1.05s}.hero-copy>*:nth-child(4){animation-delay:1.3s}.hero-copy>*:nth-child(5){animation-delay:1.55s}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 .name{margin:0 0 6px;font-family:var(--display);font-weight:400;line-height:1;display:flex;flex-wrap:wrap;gap:0 .08em}
 .name .root{display:inline-flex;flex-direction:column}
@@ -257,6 +257,69 @@ a{color:inherit}
 .steps p{margin:0;color:var(--dawn-muted)}
 @media (max-width:760px){.steps{grid-template-columns:1fr}}
 
+/* ---------- sesiones de tarot ---------- */
+.sessions{position:relative;padding:clamp(90px,11vw,150px) 0 clamp(90px,11vw,140px);background:
+  radial-gradient(900px 600px at 20% 30%,rgba(201,164,92,.12),transparent 65%),
+  radial-gradient(700px 500px at 90% 80%,rgba(78,90,66,.35),transparent 65%),
+  linear-gradient(180deg,var(--night-2) 0%,var(--night) 30%,var(--night) 100%);color:var(--night-ink);overflow:hidden;isolation:isolate}
+.sessions::before{content:"";position:absolute;left:0;right:0;top:0;height:90px;background:linear-gradient(180deg,var(--dawn-bg-2),transparent);opacity:.18;z-index:-1}
+.ses-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,96px);align-items:center}
+.ses-photo{position:relative;margin:0;max-width:480px;width:100%;justify-self:center}
+.ses-photo::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(201,164,92,.45);border-radius:999px 999px 20px 20px}
+.ses-photo::after{content:"";position:absolute;left:50%;top:-24px;width:9px;height:9px;background:var(--gold);transform:translateX(-50%) rotate(45deg)}
+.ses-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 12px 12px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7)}
+.ses-photo .glow{position:absolute;inset:0;border-radius:999px 999px 12px 12px;box-shadow:inset 0 0 80px rgba(23,28,22,.55);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;margin:0 0 16px;font-family:var(--ui);font-size:14px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft)}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.sessions h2{font-family:var(--display);font-weight:500;font-size:clamp(42px,5.4vw,78px);line-height:1;margin:0 0 20px;color:var(--bone)}
+.sessions h2 em{color:var(--gold-soft)}
+.ses-lead{font-size:1.22em;line-height:1.5;color:var(--night-ink);margin:0 0 18px;max-width:34ch}
+.ses-body{color:var(--night-muted);margin:0 0 30px;max-width:44ch}
+.ses-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.ses-actions .note{flex-basis:100%;margin:6px 0 0;font-family:var(--ui);font-size:14px;color:var(--night-muted)}
+.benefits{list-style:none;margin:clamp(70px,8vw,110px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.benefits li{padding:10px clamp(14px,2vw,30px);text-align:center;border-left:1px solid rgba(201,164,92,.25)}
+.benefits li:first-child{border-left:0}
+.benefits .ic{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 16px;border:1px solid rgba(201,164,92,.6);border-radius:50%;color:var(--gold-soft)}
+.benefits .ic svg{width:30px;height:30px}
+.benefits h3{font-family:var(--display);font-weight:500;font-size:24px;line-height:1.15;margin:0 0 8px;color:var(--bone)}
+.benefits p{margin:0;color:var(--night-muted);font-size:.95em;line-height:1.5}
+@media (max-width:900px){.benefits{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}.benefits li:nth-child(3){border-left:0}}
+@media (max-width:520px){.benefits{grid-template-columns:1fr}.benefits li{border-left:0}}
+.ses-steps{margin:clamp(70px,8vw,110px) auto 0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,96px);align-items:start}
+.ses-steps h3,.faq h3{font-family:var(--display);font-weight:500;font-size:clamp(30px,3vw,42px);line-height:1.1;margin:0 0 24px;color:var(--bone)}
+.ses-steps ol{list-style:none;margin:0;padding:0;counter-reset:st}
+.ses-steps li{counter-increment:st;position:relative;padding:0 0 26px 62px}
+.ses-steps li::before{content:counter(st,upper-roman);position:absolute;left:0;top:0;display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;font-family:var(--display);font-size:18px;color:var(--gold-soft)}
+.ses-steps li::after{content:"";position:absolute;left:21px;top:48px;bottom:6px;width:1px;background:rgba(201,164,92,.3)}
+.ses-steps li:last-child::after{content:none}
+.ses-steps li b{display:block;font-family:var(--display);font-weight:500;font-size:22px;color:var(--bone);margin-bottom:2px}
+.ses-steps li span{color:var(--night-muted)}
+.faq details{border-top:1px solid rgba(201,164,92,.25)}
+.faq details:last-of-type{border-bottom:1px solid rgba(201,164,92,.25)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 0;font-family:var(--display);font-weight:500;font-size:22px;color:var(--bone);transition:color .3s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:10px;height:10px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:rotate(45deg) translateY(-3px);transition:transform .35s}
+.faq details[open] summary::after{transform:rotate(225deg) translateY(-3px)}
+.faq summary:hover,.faq summary:focus-visible{color:var(--gold-soft)}
+.faq details p{margin:0 0 18px;color:var(--night-muted);max-width:52ch}
+.ses-band{margin:clamp(70px,8vw,110px) 0 0;padding:clamp(34px,4vw,52px);border:1px solid rgba(201,164,92,.4);border-radius:24px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,rgba(201,164,92,.1),rgba(201,164,92,.02))}
+.ses-band p{margin:0;font-family:var(--display);font-size:clamp(26px,2.6vw,36px);line-height:1.2;color:var(--bone);max-width:24ch}
+.ses-band p em{color:var(--gold-soft)}
+.btn-cal svg{width:20px;height:20px}
+@media (max-width:860px){.ses-grid,.ses-steps{grid-template-columns:1fr}.ses-photo{max-width:340px}}
+.hero-alt{flex-basis:100%;margin:22px 0 0;font-family:var(--ui);font-size:15px;color:var(--night-muted)}
+.hero-alt a{color:var(--gold-soft);text-underline-offset:4px;text-decoration-color:rgba(230,211,163,.5)}
+.hero-alt a:hover{color:var(--bone)}
+.chapter .aside{font-family:var(--ui);font-size:15px;color:var(--night-muted)}
+.chapter .aside a{color:var(--gold-soft);text-underline-offset:4px}
+.catbar a.cb-special{color:var(--gold-soft);margin-left:auto}
+.catbar a.cb-special::before{content:"";width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.nav .sub li.sep{height:1px;margin:8px 10px;background:rgba(201,164,92,.3)}
+.float .ico .i-cal{display:none}
+.float.cal .ico .i-wa{display:none}
+.float.cal .ico .i-cal{display:block}
+
 /* ---------- invitación ---------- */
 .invite{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#FBF4E4;isolation:isolate;overflow:hidden}
 .invite img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
@@ -357,6 +420,7 @@ dialog.sheet::backdrop{background:rgba(12,15,11,.74);backdrop-filter:blur(4px)}
     <ul>
       <li><a href="#historia">Mi historia</a></li>
       <li class="has-sub"><a href="#coleccion" aria-haspopup="true">Colección</a><ul class="sub" id="navSub"></ul></li>
+      <li><a href="#sesiones">Sesiones</a></li>
       <li><a href="#redes">Redes</a></li>
     </ul>
   </div>
@@ -383,6 +447,7 @@ dialog.sheet::backdrop{background:rgba(12,15,11,.74);backdrop-filter:blur(4px)}
         <a class="btn btn-gold" href="#coleccion">Encuentra tu pieza</a>
         <a class="btn btn-line" href="#historia">Conoce mi historia</a>
       </div>
+      <p class="hero-alt">¿Buscas guía para tu camino? <a href="#sesiones">Agenda una sesión privada de Tarot Tolteca</a></p>
     </div>
   </div>
   <a class="scrollcue" href="#historia"><span>Desliza y conoce mi historia</span><span class="line" aria-hidden="true"></span></a>
@@ -426,6 +491,7 @@ dialog.sheet::backdrop{background:rgba(12,15,11,.74);backdrop-filter:blur(4px)}
         <h3>El llamado</h3>
         <p>Desde pequeña sentí un llamado que no sabía nombrar: acompañar procesos. Primero los míos. Me hice preguntas, me perdí, me transformé.</p>
         <p>Con el tiempo empecé a caminar al lado de otras personas mientras atravesaban sus propios cambios, y descubrí que no hay regalo más grande que ver a alguien reconocerse otra vez.</p>
+        <p class="aside">Hoy sigo acompañando en <a href="#sesiones">sesiones privadas de Tarot Tolteca</a>.</p>
       </article>
       <article class="chapter reveal">
         <span class="num">III</span>
@@ -484,6 +550,61 @@ dialog.sheet::backdrop{background:rgba(12,15,11,.74);backdrop-filter:blur(4px)}
   </div>
 </section>
 
+<!-- ============ SESIONES DE TAROT TOLTECA ============ -->
+<section class="sessions" id="sesiones" data-cta="sessions" aria-labelledby="sesTitle">
+  <div class="wrap">
+    <div class="ses-grid">
+      <figure class="ses-photo">
+        <img src="img/tarot-tolteca.jpg" alt="Cartas de Tarot Tolteca sobre una mesa, junto a velas encendidas, una esfera de cuarzo rosa, obsidiana y un cuarzo" loading="lazy">
+        <span class="glow" aria-hidden="true"></span>
+      </figure>
+      <div>
+        <p class="eyebrow">Tarot Tolteca</p>
+        <h2 id="sesTitle">Sesiones privadas <em>con Cecy</em></h2>
+        <p class="ses-lead">Un espacio para conectar contigo, aclarar tus dudas y recibir guía desde la sabiduría del Tarot Tolteca.</p>
+        <p class="ses-body">Las cartas del Tarot Tolteca están llenas de símbolos inspirados en la herencia ancestral de México. En cada sesión, Cecy las usa como un espejo: abren preguntas, iluminan lo que estás viviendo y te ayudan a mirarlo desde otro lugar, para que tomes tus decisiones con más claridad.</p>
+        <div class="ses-actions">
+          <a class="btn btn-gold btn-cal zcal" href="https://zcal.co/quetzalyohualli/cecy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h2M12 14h2M16 14h.01M8 17h2M12 17h2"/></svg>Agenda tu sesión</a>
+          <a class="btn btn-line" id="sesAsk" href="#" target="_blank" rel="noopener">Tengo una pregunta</a>
+          <p class="note">Sesión privada, uno a uno. Eliges el día y la hora en el calendario.</p>
+        </div>
+      </div>
+    </div>
+
+    <ul class="benefits">
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 18c-3.5 0-7-2-8.5-5 2.5-.3 5 .5 6.5 2"/><path d="M12 18c3.5 0 7-2 8.5-5-2.5-.3-5 .5-6.5 2"/><path d="M12 18c-2-2-3-4.5-3-7 1.2.6 2.3 1.6 3 3 .7-1.4 1.8-2.4 3-3 0 2.5-1 5-3 7z"/><path d="M12 11c-.8-1.8-.8-3.8 0-6 .8 2.2.8 4.2 0 6z"/></svg></span><h3>Claridad en tus decisiones</h3><p>Ordena lo que sientes y lo que piensas antes de dar el siguiente paso.</p></li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg></span><h3>Guía para tu camino</h3><p>Una mirada distinta sobre la situación que te trae a la sesión.</p></li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3>Conexión contigo</h3><p>Un momento para escucharte, sin prisas y sin juicios.</p></li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a1.5 1.5 0 1 1 1.5 1.5A3 3 0 0 1 10.5 10.5 4.5 4.5 0 0 1 15 6a6 6 0 0 1 6 6 7.5 7.5 0 0 1-7.5 7.5A9 9 0 0 1 4.5 10.5"/></svg></span><h3>Herramientas para crecer</h3><p>Reflexiones y prácticas sencillas que te llevas a tu día a día.</p></li>
+    </ul>
+
+    <div class="ses-steps">
+      <div>
+        <h3>Cómo es una sesión</h3>
+        <ol>
+          <li><b>Agenda tu espacio</b><span>Elige en el calendario el día y la hora que mejor te acomoden.</span></li>
+          <li><b>Llega con tu intención</b><span>Una pregunta, una decisión o simplemente el deseo de escucharte.</span></li>
+          <li><b>La lectura</b><span>Cecy abre las cartas y conversa contigo sobre lo que muestran.</span></li>
+          <li><b>Te llevas tu guía</b><span>Reflexiones concretas y, si lo deseas, la piedra que puede acompañar tu intención.</span></li>
+        </ol>
+      </div>
+      <div class="faq">
+        <h3>Preguntas frecuentes</h3>
+        <details><summary>¿Necesito saber de tarot?</summary><p>No. Cecy te guía en todo momento; solo necesitas llegar con apertura y, si la tienes, una pregunta.</p></details>
+        <details><summary>¿Qué puedo preguntar?</summary><p>Lo que hoy ocupe tu corazón: decisiones, relaciones, trabajo, momentos de cambio o tu camino personal.</p></details>
+        <details><summary>¿Las cartas predicen mi futuro?</summary><p>Las cartas no deciden por ti. Son una herramienta de reflexión que te ayuda a mirar tu situación con más claridad; las decisiones siempre son tuyas.</p></details>
+        <details><summary>¿Cómo se agenda y se paga?</summary><p>Al tocar "Agenda tu sesión" verás los horarios disponibles y los detalles de la sesión. Si tienes cualquier duda antes de agendar, escríbele a Cecy por WhatsApp.</p></details>
+      </div>
+    </div>
+
+    <div class="ses-band">
+      <p>Tu pregunta merece <em>un espacio propio.</em></p>
+      <a class="btn btn-gold btn-cal zcal" href="https://zcal.co/quetzalyohualli/cecy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h2M12 14h2M16 14h.01M8 17h2M12 17h2"/></svg>Agenda tu sesión privada</a>
+    </div>
+    <p class="ses-actions note" style="margin-top:22px;font-family:var(--ui);font-size:14px;color:var(--night-muted)">Las sesiones son un espacio de reflexión personal y no sustituyen atención médica ni psicológica.</p>
+  </div>
+</section>
+
 <!-- ============ INVITACIÓN ============ -->
 <section class="invite" aria-labelledby="invTitle">
   <img src="img/portada.jpg" alt="Mujer meditando al amanecer frente a un valle con templos entre la niebla" loading="lazy">
@@ -514,7 +635,7 @@ dialog.sheet::backdrop{background:rgba(12,15,11,.74);backdrop-filter:blur(4px)}
 
 <!-- CTA flotante -->
 <a class="float" id="float" href="#" target="_blank" rel="noopener">
-  <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.8-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.2z"/></svg></span>
+  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" class="i-cal" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h2M12 14h2M16 14h.01M8 17h2M12 17h2"/></svg><svg class="i-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.8-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.2z"/></svg></span>
   <span class="txt"><span id="floatMain">Aparta tu pieza</span><small id="floatSub">Te responde Cecy</small></span>
 </a>
 
@@ -543,6 +664,7 @@ dialog.sheet::backdrop{background:rgba(12,15,11,.74);backdrop-filter:blur(4px)}
    CONFIGURACIÓN: edita sólo este bloque
    ========================================================= */
 const CONFIG = {
+  zcal: "https://zcal.co/quetzalyohualli/cecy",   // enlace para agendar sesiones de Tarot Tolteca
   whatsapp: "522292076258",             // número con lada internacional, sin espacios ni signos. Ej. 5214431234567
   inventarioURL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZQFQJzJ04z3CCWvNtS4VETMeqdU5mcnA3hSPSKtJdqujkbZdHMa6Pym97Ai9THqzdiLptAQQmXSB6/pub?output=csv",                     // enlace CSV de la hoja de inventario publicada en Google Sheets (ver LEEME)
   agotadas: [],                          // piezas vendidas: escribe su código entre comillas, ej. ["Q-02","RC-01"]. Ej. corazones de aventurina = "AV-01", rodado de aventurina = "AV-02"
@@ -849,6 +971,8 @@ function buildCatalog(update){
     });
     catalog.appendChild(sec); spy.observe(sec);
   });
+  navSub.insertAdjacentHTML("beforeend",`<li class="sep" aria-hidden="true"></li><li><a href="#sesiones">Sesiones de Tarot Tolteca<span>✦</span></a></li>`);
+  catbar.insertAdjacentHTML("beforeend",`<li style="margin-left:auto"><a class="cb-special" href="#sesiones">Sesiones de Tarot</a></li>`);
   catLinks=[...catbar.querySelectorAll("a")];
 }
 
@@ -885,12 +1009,14 @@ sheet.addEventListener("click",e=>{ if(e.target===sheet) sheet.close(); });
 /* ---------- CTA flotante contextual ---------- */
 const fl=document.getElementById("float"), flMain=document.getElementById("floatMain"), flSub=document.getElementById("floatSub");
 function setFloat(main,sub,href){
-  if(flMain.textContent===main){ fl.href=href; return; }
+  const isCal=href.includes("zcal.co");
+  if(flMain.textContent===main){ fl.href=href; fl.classList.toggle("cal",isCal); return; }
   flMain.style.opacity=0;
-  setTimeout(()=>{ flMain.textContent=main; flSub.textContent=sub; fl.href=href; flMain.style.opacity=1; },200);
+  setTimeout(()=>{ flMain.textContent=main; flSub.textContent=sub; fl.href=href; fl.classList.toggle("cal",isCal); flMain.style.opacity=1; },200);
 }
 setFloat("Aparta tu pieza","Te responde Cecy",wa(MSG_GENERAL));
 document.getElementById("inviteCta").href=wa(MSG_GENERAL);
+document.getElementById("sesAsk").href=wa("Hola Cecy, me interesa una sesión privada de Tarot Tolteca y tengo una pregunta antes de agendar.");
 document.getElementById("helpCta").href=wa("Hola Cecy, busco una pieza para mí o para regalar y no sé cuál elegir. ¿Me ayudas?");
 const pieceObs=new IntersectionObserver(es=>{
   es.forEach(e=>{ if(e.isIntersecting){ const p=PIECES.find(x=>x.key===e.target.dataset.id); setFloat(...floatFor(p)); }});
@@ -902,6 +1028,7 @@ const secObs=new IntersectionObserver(es=>{
     const k=e.target.dataset.cta;
     if(k==="story") setFloat("Escríbele a Cecy","Encuentra tu pieza",wa(MSG_GENERAL));
     if(k==="social") setFloat("Aparta tu pieza","Te responde Cecy",wa(MSG_GENERAL));
+    if(k==="sessions") setFloat("Agenda tu sesión","Tarot Tolteca con Cecy",CONFIG.zcal);
   }});
 },{rootMargin:"-50% 0px -50% 0px",threshold:0});
 document.querySelectorAll("[data-cta]").forEach(s=>secObs.observe(s));
